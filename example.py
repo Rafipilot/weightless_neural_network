@@ -1,7 +1,7 @@
 import Core
 
 # Create a WNN with 3 neurons
-wnn = Core.SimpleWNN(num_neurons=3)
+wnn = Core.WNN(input_size=4, num_neurons_layer1=4, num_neurons_layer2=2)
 
 # Train the network
 training_data = [
@@ -11,8 +11,8 @@ training_data = [
     ([1, 1, 1, 1], 1)
 ]
 
-for input_pattern, output in training_data:
-    wnn.train(input_pattern, output)
+for input, output in training_data:
+    wnn.train(input, output)
 
 # Test the network
 test_input = [0, 0, 0, 1]
